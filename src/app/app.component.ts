@@ -6,6 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-test';
+  title = 'EaseMyForm';
 
+  ngAfterViewInit() {
+    const ads = document.getElementsByClassName('adsbygoogle');
+    for (let i = 0; i < ads.length; i++) {
+      try {
+        (window as { [key: string]: any })['adsbygoogle'] = (window as { [key: string]: any })['adsbygoogle'] || [];
+        (window as { [key: string]: any })['adsbygoogle'].push({});
+      } catch (e) {
+        console.error('Error loading Google AdSense:', e);
+      }
+    }
+  }
 }
