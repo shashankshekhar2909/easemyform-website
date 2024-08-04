@@ -11,6 +11,8 @@ import { PricingComponent } from './_components/pricing/pricing.component';
 import { PrivacyPolicyComponent } from './_components/privacy-policy/privacy-policy.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { JobsComponent } from './_components/jobs/jobs.component';
+import { ResumeComponent } from './_components/resume/resume.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { MaterialModule } from './material/material.module';
     FooterComponent,
     TcComponent,
     PricingComponent,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
+    JobsComponent,
+    ResumeComponent
   ],
   imports: [
     BrowserModule,

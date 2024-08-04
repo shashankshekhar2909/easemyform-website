@@ -50,8 +50,52 @@
   text-align: left;
   margin-top: auto; /* Push the paragraph to the bottom */
 }
+.headTextHolder{
+  background-color: #00C2CC;
+  margin: 0px 10vw;
+  padding: 4vh;
+  border-radius: 10px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
 
 
+.section-header p{
+  font-size: 1.2rem;
+}
+
+.section-header .header{
+  font-size: 1.8rem;
+}
+
+#tab1 div{
+  margin: 3vw;
+}
+#tab1 div h4{
+  font-size: 1.5rem;
+
+}
+
+#tab2 div{
+  margin: 1vw;
+}
+
+#tab2 div h4{
+  text-align: justify;
+}
+
+.joinButton{
+  width: 80%;
+  line-height: 0;
+  padding: 20px 40px;
+  border-radius: 4px;
+  transition: 0.5s;
+  color: #fff;
+  background: #00C2CB;
+  box-shadow: 0px 5px 25px rgba(65, 84, 241, 0.3);
+  font-size: 1.2rem;
+
+}
 
 
 .ezy__testimonial23 {
