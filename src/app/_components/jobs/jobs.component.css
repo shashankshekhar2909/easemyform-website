@@ -76,8 +76,16 @@
 
 }
 #tab1 div h4{
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   color: #fff !important;
+}
+
+#tab1 div i {
+  font-size: 35px;
+  line-height: 0;
+  margin-right: 8px;
+  color: #fff;
+  margin-left: 20px;
 }
 
 #tab2 div{
@@ -88,16 +96,16 @@
 }
 
 #tab2 div h4{
-  font-size: 25px;
-  line-height: 30px;
+  font-size: 18px;
+  line-height: 25px;
   text-align: justify;
 }
 
 .joinButton{
-  height: 90px;
-  width: 80%;
+  height: 50px;
+  width: 25vw;
   line-height: 0;
-  padding: 20px 40px;
+  padding: 10px 20px;
   border-radius: 4px;
   transition: 0.5s;
   color: #fff;
@@ -212,4 +220,8 @@
   background-color: rgba(var(--ezy-theme-color-rgb), 1) !important;
   color: rgba(var(--ezy-theme-color-rgb), 1) !important;
   opacity: 1;
+}
+
+.bi{
+  color: #fff;
 }

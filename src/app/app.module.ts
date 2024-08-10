@@ -14,6 +14,8 @@ import { MaterialModule } from './material/material.module';
 import { JobsComponent } from './_components/jobs/jobs.component';
 import { ResumeComponent } from './_components/resume/resume.component';
 import { LinkedinComponent } from './_components/linkedin/linkedin.component';
+import { RefundComponent } from './_components/refund/refund.component';
+import { AboutComponent } from './_components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { LinkedinComponent } from './_components/linkedin/linkedin.component';
     PrivacyPolicyComponent,
     JobsComponent,
     ResumeComponent,
-    LinkedinComponent
+    LinkedinComponent,
+    RefundComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

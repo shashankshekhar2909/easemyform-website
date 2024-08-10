@@ -160,3 +160,66 @@
   color: rgba(var(--ezy-theme-color-rgb), 1) !important;
   opacity: 1;
 }
+
+.logoContainer{
+  width: 100vw;
+  height: 10vh;
+}
+
+.marquee-container {
+  background-color: #fff;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 10vh;
+  min-height: 100px;
+  padding: 40px 40px;
+  box-shadow: 4px 4px 18px 4px #00000010;
+  border-radius: 20px;
+  /* width: 80vw; */
+  /* margin: 0px 5vw; */
+}
+
+.marquee-content {
+  display: flex;
+  animation: marquee 15s linear infinite;
+}
+
+.contentImage {
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 4px 4px 18px 4px #00000010;
+  padding: 10px 20px;
+  flex: 0 0 150px; /* Each .content div takes up 150px width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px; /* Adjust spacing between items */
+}
+
+.contentImage img {
+  max-width: 100%; /* Image fits within its container */
+  height: auto;
+  max-height: 70px;
+}
+
+.marquee-content::after {
+  content: attr(data-duplicate); /* Reuse the content */
+  display: flex;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-80%);
+  }
+}
+.rating{
+  margin-top: 30px;
+}
+
+.content p {
+  text-align: justify;
+  font-size: 1.2rem;
+}

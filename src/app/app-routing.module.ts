@@ -7,6 +7,8 @@ import { JobsComponent } from './_components/jobs/jobs.component';
 import { TcComponent } from './_components/tc/tc.component';
 import { ResumeComponent } from './_components/resume/resume.component';
 import { LinkedinComponent } from './_components/linkedin/linkedin.component';
+import { RefundComponent } from './_components/refund/refund.component';
+import { AboutComponent } from './_components/about/about.component';
 
 const routes: Routes = [
   {
@@ -43,6 +45,16 @@ const routes: Routes = [
     path:'terms-&-conditions',
     component:TcComponent,
     title:'Terms & Condition'
+  },
+  {
+    path:'refund-policy',
+    component:RefundComponent,
+    title:'Cancellation and Refund Policy'
+  },
+  {
+    path:'about-us',
+    component:AboutComponent,
+    title:'About Us'
   }
 ];
 

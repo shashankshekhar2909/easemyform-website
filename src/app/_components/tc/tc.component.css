@@ -1,5 +1,7 @@
 .box{
   text-align: justify;
+  border: none;
+  box-shadow: none;
 
 }
 
@@ -10,4 +12,38 @@ dl dt {
   margin: 25px 0px;
   margin-bottom: 10px;
   font-size: 1.0rem;
+}
+
+p{
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+.active{
+  font-size: 1.3rem;
+  margin-top:4vh;
+}
+#main{
+  margin: 8vh 0px;
+}
+.active{
+  color: #3078BE;
+}
+
+dd{
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+p{
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+.active{
+  font-size: 1.3rem;
+  margin-top:4vh;
 }
