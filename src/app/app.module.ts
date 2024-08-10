@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { JobsComponent } from './_components/jobs/jobs.component';
 import { ResumeComponent } from './_components/resume/resume.component';
+import { LinkedinComponent } from './_components/linkedin/linkedin.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ResumeComponent } from './_components/resume/resume.component';
     PricingComponent,
     PrivacyPolicyComponent,
     JobsComponent,
-    ResumeComponent
+    ResumeComponent,
+    LinkedinComponent
   ],
   imports: [
     BrowserModule,

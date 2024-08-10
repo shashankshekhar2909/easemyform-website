@@ -18,3 +18,8 @@
   width: 40vw;
   padding: 5px 10px;
 }
+
+.active-link {
+  font-weight: bold;
+  color: #00C2CB;
+}

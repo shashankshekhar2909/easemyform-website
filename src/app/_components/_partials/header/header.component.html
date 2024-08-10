@@ -6,13 +6,13 @@
     </a>
     <nav id="navbar navbar" class="navbar">
       <ul>
-        <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-        <li><a class="nav-link scrollto" href="#about">Resume</a></li>
-        <li><a class="nav-link scrollto" href="#contact">LinkedIn Optimization</a></li>
-        <li><a class="nav-link scrollto" href="/jobs">Jobs</a></li>
+        <li><a routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active-link" class="nav-link scrollto">Home</a></li>
+        <li><a routerLinkActive="active-link" class="nav-link scrollto" routerLink="/resume">Resume</a></li>
+        <li><a class="nav-link scrollto" routerLink="/linkedin-optimization">LinkedIn Optimization</a></li>
+        <li><a class="nav-link scrollto" routerLink="/jobs">Jobs</a></li>
         <li><a class="nav-link scrollto" routerLink="/pricing">Pricing</a></li>
-        <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
-        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        <li><a class="nav-link scrollto" routerLink="/" fragment="faq">FAQ</a></li>
+        <li><a class="nav-link scrollto" routerLink="/" fragment="contact">Contact</a></li>
         <li><a class="nav-link scrollto" href="https://blog.easemyform.com/" target="_blank">Blog</a></li>
         <li><a class="nav-link scrollto" href="https://app.easemyform.com/">Login</a></li>
       </ul>
@@ -20,8 +20,8 @@
       <mat-menu #menu="matMenu">
         <ul class="mobileNav">
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">Resume</a></li>
-          <li><a class="nav-link scrollto" href="#contact">LinkedIn Optimization</a></li>
+          <li><a class="nav-link scrollto" href="/resume">Resume</a></li>
+          <li><a class="nav-link scrollto" href="/linkedin-optimization">LinkedIn Optimization</a></li>
           <li><a class="nav-link scrollto" href="/jobs">Jobs</a></li>
           <li><a class="nav-link scrollto" routerLink="/pricing">Pricing</a></li>
           <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>

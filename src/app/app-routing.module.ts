@@ -5,6 +5,8 @@ import { PricingComponent } from './_components/pricing/pricing.component';
 import { PrivacyPolicyComponent } from './_components/privacy-policy/privacy-policy.component';
 import { JobsComponent } from './_components/jobs/jobs.component';
 import { TcComponent } from './_components/tc/tc.component';
+import { ResumeComponent } from './_components/resume/resume.component';
+import { LinkedinComponent } from './_components/linkedin/linkedin.component';
 
 const routes: Routes = [
   {
@@ -21,6 +23,16 @@ const routes: Routes = [
     path:'jobs',
     component:JobsComponent,
     title:'Jobs'
+  },
+  {
+    path:'resume',
+    component:ResumeComponent,
+    title:'Resume'
+  },
+  {
+    path:'linkedin-optimization',
+    component:LinkedinComponent,
+    title:'Resume'
   },
   {
     path:'privacy-policy',

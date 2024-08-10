@@ -1,0 +1,172 @@
+.content{
+  /* height: 50px;
+  margin: 10px 20px; */
+  flex: 1;
+    /* border: 1px solid green; */
+}
+.content div img{
+  /* height: 100%; */
+  max-height: 100px;
+}
+
+.nav-tabs{
+  border: none;
+}
+
+.nav-tabs li{
+  margin: 0px 10px;
+}
+
+
+.nav-tabs li button{
+  border: 2px solid #D6D7DF;
+  border-radius: 30px;
+  color: #656272;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+  border: 2px solid #00C2CC;
+  color: #00C2CC;
+}
+
+.content div{
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+.featuresContent {
+  display: flex;
+  flex-direction: column;
+  height: 100px; /* Adjust this height as needed */
+}
+
+.featuresContent h4 {
+  text-align: left;
+  margin: 0; /* Remove default margin */
+}
+
+.featuresContent p {
+  text-align: left;
+  margin-top: auto; /* Push the paragraph to the bottom */
+}
+
+
+
+
+.ezy__testimonial23 {
+  /* Bootstrap variables */
+  --bs-body-color: #28303b;
+  --bs-body-bg: rgb(255, 255, 255);
+
+  /* Easy Frontend variables */
+  --ezy-theme-color: rgb(13, 110, 253);
+  --ezy-theme-color-rgb: 13, 110, 253;
+  --ezy-card-bg: #ffffff;
+  --ezy-card-box-shadow: 0px 6px 44px rgba(173, 174, 197, 0.2);
+
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  overflow: hidden;
+  position: relative;
+  padding: 60px 0;
+}
+
+@media (min-width: 768px) {
+  .ezy__testimonial23 {
+    padding: 100px 0;
+  }
+}
+
+/* Gray Block Style */
+.gray .ezy__testimonial23,
+.ezy__testimonial23.gray {
+  /* Bootstrap variables */
+  --bs-body-bg: rgb(246, 246, 246);
+
+  /* Easy Frontend variables */
+  --ezy-card-bg: #fff;
+}
+
+/* Dark Gray Block Style */
+.dark-gray .ezy__testimonial23,
+.ezy__testimonial23.dark-gray {
+  /* Bootstrap variables */
+  --bs-body-color: #ffffff;
+  --bs-body-bg: rgb(30, 39, 53);
+
+  /* Easy Frontend variables */
+  --ezy-card-bg: rgb(30, 39, 53);
+  --ezy-card-box-shadow: 0px 6px 44px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Block Style */
+.dark .ezy__testimonial23,
+.ezy__testimonial23.dark {
+  /* Bootstrap variables */
+  --bs-body-color: #ffffff;
+  --bs-body-bg: rgb(11, 23, 39);
+
+  /* Easy Frontend variables */
+  --ezy-card-bg: rgb(11, 23, 39);
+  --ezy-card-box-shadow: 0px 6px 44px rgba(0, 0, 0, 0.2);
+}
+
+.ezy__testimonial23-heading {
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 1.5;
+  color: #3078BE;
+}
+.ezy__testimonial23-sub-heading {
+  opacity: 0.8;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* shapes */
+.ezy__testimonial23-shape-one {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.ezy__testimonial23-shape-two {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.ezy__testimonial23-item {
+  background-color: var(--ezy-card-bg);
+  box-shadow: var(--ezy-card-box-shadow);
+}
+
+/* indicators */
+.ezy__testimonial23 .carousel-indicators {
+  margin: 0;
+  bottom: -50px;
+}
+
+.ezy__testimonial23 .carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--bs-body-color);
+  opacity: 0.2;
+}
+
+.ezy__testimonial23 .carousel-indicators button.active {
+  background-color: rgba(var(--ezy-theme-color-rgb), 1) !important;
+  color: rgba(var(--ezy-theme-color-rgb), 1) !important;
+  opacity: 1;
+}
+.btn-get-started {
+  margin-top: 30px;
+  line-height: 0;
+  padding: 15px 40px;
+  border-radius: 4px;
+  transition: 0.5s;
+  color: #fff;
+  background: #00C2CB;
+  box-shadow: 0px 5px 30px rgba(65, 84, 241, 0.4);
+}

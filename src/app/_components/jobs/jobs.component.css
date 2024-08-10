@@ -70,21 +70,31 @@
 
 #tab1 div{
   margin: 3vw;
+  background-color: #00C2CB;
+  min-height: 10vh;
+  border-radius: 10px
+
 }
 #tab1 div h4{
-  font-size: 1.5rem;
-
+  font-size: 2.5rem;
+  color: #fff !important;
 }
 
 #tab2 div{
   margin: 1vw;
 }
+#tab2 div i{
+  font-size: 40px;
+}
 
 #tab2 div h4{
+  font-size: 25px;
+  line-height: 30px;
   text-align: justify;
 }
 
 .joinButton{
+  height: 90px;
   width: 80%;
   line-height: 0;
   padding: 20px 40px;
@@ -93,8 +103,7 @@
   color: #fff;
   background: #00C2CB;
   box-shadow: 0px 5px 25px rgba(65, 84, 241, 0.3);
-  font-size: 1.2rem;
-
+  font-size: 1.8rem;
 }
 
 
