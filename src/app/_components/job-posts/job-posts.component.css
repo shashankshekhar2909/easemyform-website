@@ -225,3 +225,16 @@
 .bi{
   color: #fff;
 }
+
+/* Disable text selection */
+.ezy__blogdetails5 {
+  user-select: none;
+  -webkit-user-select: none; /* For Safari */
+  -moz-user-select: none; /* For Firefox */
+  -ms-user-select: none; /* For IE/Edge */
+}
+
+/* Disable right-click context menu */
+.ezy__blogdetails5 {
+  -webkit-touch-callout: none; /* Disable callout in iOS Safari */
+}

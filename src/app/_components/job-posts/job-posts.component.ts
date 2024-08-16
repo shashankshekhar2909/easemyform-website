@@ -24,8 +24,22 @@ export class JobPostsComponent {
       if(params){
         this.jobId = params._id;
         this.loadJobDetails(this.jobId);
-        }
+      } else {
+        alert('No Job Found;')
+      }
     });
+    // Disable right-click context menu
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+
+    // Disable text copying using keyboard shortcuts
+    document.addEventListener('keydown', function (e) {
+      if (e.ctrlKey && (e.key === 'c' || e.key === 'x' || e.key === 'u' || e.key === 's')) {
+        e.preventDefault();
+      }
+    });
+
   }
 
   loadJobDetails(id: string): void {
@@ -45,7 +59,7 @@ export class JobPostsComponent {
       },
       error: (HttpResponse: HttpErrorResponse) => {
         console.log(HttpResponse);
-
+        alert('No Job Found;')
       }
     });
   }
