@@ -58,9 +58,7 @@
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
 }
-.features{
-  padding: 0px !important;
-}
+
 
 .section-header p{
   font-size: 1.2rem;
@@ -72,23 +70,21 @@
 
 #tab1 div{
   margin: 4vh 0px;
-  background-color: #fccf97;
-  /* background-color: #00C2CB; */
+  background-color: #00C2CB;
   min-height: 10vh;
-  border-radius: 10px;
-  color: #25318D
+  border-radius: 10px
 
 }
 #tab1 div h4{
   font-size: 1.5rem;
-  color: #25318D;
+  color: #fff !important;
 }
 
 #tab1 div i {
   font-size: 35px;
   line-height: 0;
   margin-right: 8px;
-  color: #25318D;
+  color: #fff;
   margin-left: 20px;
 }
 
@@ -115,7 +111,7 @@
   color: #fff;
   background: #00C2CB;
   box-shadow: 0px 5px 25px rgba(65, 84, 241, 0.3);
-  font-size: 1.4rem;
+  font-size: 1.8rem;
 }
 
 

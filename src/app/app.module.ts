@@ -16,6 +16,8 @@ import { ResumeComponent } from './_components/resume/resume.component';
 import { LinkedinComponent } from './_components/linkedin/linkedin.component';
 import { RefundComponent } from './_components/refund/refund.component';
 import { AboutComponent } from './_components/about/about.component';
+import { JobPostsComponent } from './_components/job-posts/job-posts.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,13 +32,15 @@ import { AboutComponent } from './_components/about/about.component';
     ResumeComponent,
     LinkedinComponent,
     RefundComponent,
-    AboutComponent
+    AboutComponent,
+    JobPostsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
