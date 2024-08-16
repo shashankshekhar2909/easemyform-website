@@ -22,7 +22,7 @@ export class JobPostsComponent {
     this.route.queryParams.subscribe((params:any) => {
       console.log(params);
       if(params){
-        this.jobId = params.jobId;
+        this.jobId = params._id;
         this.loadJobDetails(this.jobId);
         }
     });
