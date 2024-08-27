@@ -27,12 +27,20 @@ export class AuthService {
     if(filters){
       if (filters._id) {
         params.append('_id', filters._id.toString());
-        // params.append('type', 'filter');
+        params.append('type', 'filter');
       }
     } else {
       params.append('type', 'all');
     }
     // const endPoint = this.baseUrl + this.globals.urlJoin('jobs', 'jobFeeds');
+    return this.http.get(`${this.baseUrl}/job/job-feed-user-public?${params.toString()}`);
+  }
+
+  getJobList = (page:number,limit:number) => {
+    const params = new URLSearchParams();
+    params.append('type', 'all');
+    params.append('page', page.toString());
+    params.append('size', limit.toString());
     return this.http.get(`${this.baseUrl}/job/job-feed-user-public?${params.toString()}`);
   }
 }

@@ -18,6 +18,8 @@ import { RefundComponent } from './_components/refund/refund.component';
 import { AboutComponent } from './_components/about/about.component';
 import { JobPostsComponent } from './_components/job-posts/job-posts.component';
 import { HttpClientModule } from '@angular/common/http';
+import { JobListComponent } from './_components/job-list/job-list.component';
+import { TextSlicePipe } from './text-slice.pipe';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { HttpClientModule } from '@angular/common/http';
     LinkedinComponent,
     RefundComponent,
     AboutComponent,
-    JobPostsComponent
+    JobPostsComponent,
+    JobListComponent,
+    TextSlicePipe
   ],
   imports: [
     BrowserModule,

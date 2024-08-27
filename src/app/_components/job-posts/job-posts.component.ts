@@ -13,6 +13,7 @@ export class JobPostsComponent {
   jobPostList:[] = [];
   jobDetail:any = null;
   jobChips:any = [];
+  roles:any = [];
   constructor(
     private route: ActivatedRoute,
     private authService: AuthService
@@ -46,14 +47,17 @@ export class JobPostsComponent {
     console.log(id);
     // Fetch job details using the id
     const jobId = {
-      _id:id
+      _id:id,
+      type:'filter'
     }
     this.authService.getJobDetails(jobId).subscribe({
       next: (resp:any) => {
         console.log(resp);
         this.jobPostList = resp.results;
         this.jobDetail = this.jobPostList.find((job:any) => job._id === id);
-        this.jobChips = this.jobDetail.keywords[0].split(',').map((chip:any) => chip.trim());
+        if(this.jobDetail.keywords[0]){
+          this.jobChips = this.jobDetail.keywords[0].split(',').map((chip:any) => chip.trim());
+        }
         console.log(this.jobDetail);
         console.log(resp);
       },

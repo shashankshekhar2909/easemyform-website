@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Job List</h1>
+    </div>
+  </div>
+  <div class="row jobContainer">
+    <div class="col-lg-3 col-md-6 col-sm-12 jobCard" *ngFor="let item of jobPostList" (click)="viewJob(item)">
+      <div class="card">
+        <div class="position-relative">
+          <!-- <div class="ezy__portfolio12_p1q7ACOz-play-btn"><i class="fa fa-play ms-1"></i></div> -->
+          <!-- <img
+            src="https://cdn-icons-png.flaticon.com/512/8522/8522193.png"
+            class="card-img-top"
+            alt="..."
+          /> -->
+        </div>
+        <div class="card-body">
+          <!-- <a>
+            <p class="card-text mb-2">Marketing</p>
+          </a> -->
+          <a (click)="viewJob(item)" class="link">
+            <h3 class="card-title mb-2">{{item?.designation}}</h3>
+          </a>
+          <p class="card-text" style="text-align: justify;">
+            {{item?.job_description_text | textSlice:300}}
+          </p>
+          <div class="d-flex justify-content-between mb-2">
+            <div class="d-flex align-items-center">
+              <!-- <div class="me-2">
+                <img
+                  src="https://cdn.easyfrontend.com/pictures/testimonial/testimonial_square_1.jpeg"
+                  alt=""
+                  class="img-fluid rounded-circle border"
+                  width="40"
+                />
+              </div> -->
+              <div>
+                <a href="{{item.company_website}}" target="_blank">
+                  <h4 class="mb-0">{{item.company}}</h4>
+                </a>
+              </div>
+            </div>
+            <!-- <a href="#" class="btn btn-outline ezy__portfolio12_p1q7ACOz-card-btn" type="button">Gift</a> -->
+          </div>
+          <div>
+            <span>Posted On: {{item?.created_at | date:'dd MMM yyyy'}}</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-end">
+      <li class="page-item" [ngClass]="{'disabled':page==1}">
+        <a class="page-link" tabindex="-1" (click)="changePage(page-1)">Previous</a>
+      </li>
+      <li class="page-item"><a class="page-link">{{page}}</a></li>
+      <li class="page-item" [ngClass]="{'disabled':page==totalPages}">
+        <a class="page-link" href="#" (click)="changePage(page+1)">Next</a>
+      </li>
+    </ul>
+  </nav>
+
+</div>

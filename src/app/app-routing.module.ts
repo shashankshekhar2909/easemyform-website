@@ -10,6 +10,7 @@ import { LinkedinComponent } from './_components/linkedin/linkedin.component';
 import { RefundComponent } from './_components/refund/refund.component';
 import { AboutComponent } from './_components/about/about.component';
 import { JobPostsComponent } from './_components/job-posts/job-posts.component';
+import { JobListComponent } from './_components/job-list/job-list.component';
 
 const routes: Routes = [
   {
@@ -58,9 +59,14 @@ const routes: Routes = [
     title:'About Us'
   },
   {
+    path:'job-list',
+    component:JobListComponent,
+    title:'Job List'
+  },
+  {
     path:'job',
     component:JobPostsComponent,
-    title:'About Us'
+    title:'Jobs'
   }
 ];
 
