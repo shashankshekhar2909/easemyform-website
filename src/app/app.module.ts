@@ -20,6 +20,7 @@ import { JobPostsComponent } from './_components/job-posts/job-posts.component';
 import { HttpClientModule } from '@angular/common/http';
 import { JobListComponent } from './_components/job-list/job-list.component';
 import { TextSlicePipe } from './text-slice.pipe';
+import { CoverLetterComponent } from './_components/cover-letter/cover-letter.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { TextSlicePipe } from './text-slice.pipe';
     AboutComponent,
     JobPostsComponent,
     JobListComponent,
-    TextSlicePipe
+    TextSlicePipe,
+    CoverLetterComponent
   ],
   imports: [
     BrowserModule,

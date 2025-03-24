@@ -11,6 +11,7 @@ import { RefundComponent } from './_components/refund/refund.component';
 import { AboutComponent } from './_components/about/about.component';
 import { JobPostsComponent } from './_components/job-posts/job-posts.component';
 import { JobListComponent } from './_components/job-list/job-list.component';
+import { CoverLetterComponent } from './_components/cover-letter/cover-letter.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,11 @@ const routes: Routes = [
     path:'resume',
     component:ResumeComponent,
     title:'Resume'
+  },
+  {
+    path:'cover-letter',
+    component:CoverLetterComponent,
+    title:'Cover Letter'
   },
   {
     path:'linkedin-optimization',
