@@ -1,66 +1,159 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <h1>Job List</h1>
+<section id="hero" class="hero d-flex align-items-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 d-flex flex-column justify-content-center">
+        <h1 data-aos="fade-up" style="font-size: 2.5rem;">Find Your Dream Job</h1>
+        <h2 data-aos="fade-up" style="font-size: 1.5rem;" data-aos-delay="400">Discover the perfect career opportunity with our curated job listings</h2>
+        <div data-aos="fade-up" data-aos-delay="600">
+          <div class="text-center text-lg-start">
+            <a href="#jobListings" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+              <span>Browse Jobs</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+        <img src="../../../assets/img/jobs1.jpg" class="img-fluid" alt="Job Search">
+      </div>
     </div>
   </div>
-  <div class="row jobContainer">
-    <div class="col-lg-3 col-md-6 col-sm-12 jobCard" *ngFor="let item of jobPostList" (click)="viewJob(item)">
-      <div class="card">
-        <div class="position-relative">
-          <!-- <div class="ezy__portfolio12_p1q7ACOz-play-btn"><i class="fa fa-play ms-1"></i></div> -->
-          <!-- <img
-            src="https://cdn-icons-png.flaticon.com/512/8522/8522193.png"
-            class="card-img-top"
-            alt="..."
-          /> -->
-        </div>
-        <div class="card-body">
-          <!-- <a>
-            <p class="card-text mb-2">Marketing</p>
-          </a> -->
-          <a (click)="viewJob(item)" class="link">
-            <h3 class="card-title mb-2">{{item?.designation}}</h3>
-          </a>
-          <p class="card-text" style="text-align: justify;">
-            {{item?.job_description_text | textSlice:300}}
+</section>
+
+<section id="about" class="about">
+  <div class="container" data-aos="fade-up">
+    <div class="row gx-0">
+      <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="content">
+          <h2>Elevate Your Career Journey</h2>
+          <p>
+            We curate high-quality job opportunities from leading companies across various industries. Our platform makes it easy to find positions that match your skills, experience, and career aspirations. Take the next step in your professional journey with our comprehensive job listings.
           </p>
-          <div class="d-flex justify-content-between mb-2">
-            <div class="d-flex align-items-center">
-              <!-- <div class="me-2">
-                <img
-                  src="https://cdn.easyfrontend.com/pictures/testimonial/testimonial_square_1.jpeg"
-                  alt=""
-                  class="img-fluid rounded-circle border"
-                  width="40"
-                />
-              </div> -->
-              <div>
-                <a href="{{item.company_website}}" target="_blank">
-                  <h4 class="mb-0">{{item.company}}</h4>
-                </a>
-              </div>
-            </div>
-            <!-- <a href="#" class="btn btn-outline ezy__portfolio12_p1q7ACOz-card-btn" type="button">Gift</a> -->
+        </div>
+      </div>
+      <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+        <img src="../../../assets/img/jobs2.jpg" class="img-fluid" alt="Job Opportunities">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Loading Overlay -->
+<div class="loading-overlay" *ngIf="isLoading">
+  <div class="spinner-container">
+    <div class="spinner"></div>
+    <p>Loading job opportunities...</p>
+  </div>
+</div>
+
+<section id="jobListings" class="job-listings-section">
+  <div class="container" data-aos="fade-up">
+    <header class="section-header">
+      <p>Job Opportunities</p>
+    </header>
+
+    <!-- No Jobs Found -->
+    <div class="no-jobs-container" *ngIf="!isLoading && (!jobPostList || jobPostList.length === 0)">
+      <div class="no-jobs-content">
+        <i class="bi bi-briefcase-fill"></i>
+        <h3>No Job Listings Available</h3>
+        <p>We're currently updating our job listings. Please check back later for new opportunities.</p>
+        <button class="refresh-btn" (click)="loadJobList(1, limit)">
+          <i class="bi bi-arrow-clockwise"></i> Refresh
+        </button>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="!isLoading && jobPostList && jobPostList.length > 0">
+      <!-- Left Panel - Job List -->
+      <div class="col-lg-4 col-md-5">
+        <div class="job-list-panel">
+          <div class="job-list-header">
+            <h3>Available Positions</h3>
           </div>
-          <div>
-            <span>Posted On: {{item?.created_at | date:'dd MMM yyyy'}}</span>
+          <div class="job-list-container">
+            <div class="job-list-item" *ngFor="let item of jobPostList"
+                 (click)="selectJob(item)"
+                 [ngClass]="{'active': selectedJob && selectedJob._id === item._id}">
+              <h4>{{item?.designation}}</h4>
+              <div class="company-name">{{item.company}}</div>
+              <div class="posted-date">Posted: {{item?.created_at | date:'dd MMM yyyy'}}</div>
+            </div>
+          </div>
+          <nav aria-label="Page navigation" class="pagination-container">
+            <ul class="pagination">
+              <li class="page-item" [ngClass]="{'disabled':page==1}">
+                <a class="page-link" tabindex="-1" (click)="changePage(page-1)">Previous</a>
+              </li>
+              <li class="page-item"><a class="page-link">{{page}}</a></li>
+              <li class="page-item" [ngClass]="{'disabled':page==totalPages}">
+                <a class="page-link" (click)="changePage(page+1)">Next</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Right Panel - Job Details -->
+      <div class="col-lg-8 col-md-7">
+        <div class="job-detail-panel" *ngIf="selectedJob">
+          <div class="job-header">
+            <h2>{{selectedJob?.designation}}</h2>
+            <div class="company-details">
+              <a href="{{selectedJob.company_website}}" target="_blank" class="company-link">
+                <h3>{{selectedJob.company}}</h3>
+              </a>
+              <span class="posted-on">Posted on: {{selectedJob?.created_at | date:'dd MMM yyyy'}}</span>
+            </div>
           </div>
 
+          <div class="job-content">
+            <div class="job-section">
+              <h4>Job Description</h4>
+              <p>{{selectedJob?.job_description_text}}</p>
+            </div>
+
+            <div class="job-section" *ngIf="selectedJob?.requirements">
+              <h4>Requirements</h4>
+              <p>{{selectedJob?.requirements}}</p>
+            </div>
+
+            <div class="job-section" *ngIf="selectedJob?.responsibilities">
+              <h4>Responsibilities</h4>
+              <p>{{selectedJob?.responsibilities}}</p>
+            </div>
+
+            <div class="job-section">
+              <h4>Details</h4>
+              <div class="job-details-grid">
+                <div class="detail-item">
+                  <span class="detail-label">Location:</span>
+                  <span class="detail-value">{{selectedJob?.location || 'Not specified'}}</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Job Type:</span>
+                  <span class="detail-value">{{selectedJob?.job_type || 'Not specified'}}</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Experience:</span>
+                  <span class="detail-value">{{selectedJob?.experience || 'Not specified'}}</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Salary:</span>
+                  <span class="detail-value">{{selectedJob?.salary || 'Not specified'}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="no-job-selected" *ngIf="!selectedJob">
+          <div class="placeholder-content">
+            <i class="bi bi-briefcase"></i>
+            <h3>Select a job from the list to view details</h3>
+            <p>Browse through our available positions and click on a job to see more information.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-end">
-      <li class="page-item" [ngClass]="{'disabled':page==1}">
-        <a class="page-link" tabindex="-1" (click)="changePage(page-1)">Previous</a>
-      </li>
-      <li class="page-item"><a class="page-link">{{page}}</a></li>
-      <li class="page-item" [ngClass]="{'disabled':page==totalPages}">
-        <a class="page-link" href="#" (click)="changePage(page+1)">Next</a>
-      </li>
-    </ul>
-  </nav>
-
-</div>
+</section>
