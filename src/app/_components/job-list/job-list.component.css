@@ -461,7 +461,10 @@ a.link:hover{
 }
 
 .apply-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   padding: 12px 30px;
   background-color: #00C2CB;
   color: #ffffff;
@@ -477,6 +480,16 @@ a.link:hover{
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 194, 203, 0.3);
   color: #ffffff;
+}
+
+.apply-btn:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-send-fill" viewBox="0 0 16 16"><path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/></svg>') no-repeat center center;
+  background-size: contain;
+  margin-right: 8px;
 }
 
 /* Empty State */
@@ -625,5 +638,88 @@ a.link:hover{
   background-color: #00a8b0;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 194, 203, 0.3);
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: #f8f9fb;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #e6f7f8;
+  border-radius: 50%;
+  color: #00C2CB;
+  font-size: 18px;
+}
+
+.contact-text a {
+  color: #012970;
+  font-size: 16px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-text a:hover {
+  color: #00C2CB;
+  text-decoration: underline;
+}
+
+/* Skill Tags */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  display: inline-block;
+  background-color: #e6f7f8;
+  color: #00a8b0;
+  padding: 6px 12px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Lists */
+.responsibilities-list,
+.qualification-list,
+.why-work-here-list {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+.responsibilities-list li,
+.qualification-list li,
+.why-work-here-list li {
+  margin-bottom: 10px;
+  position: relative;
+  line-height: 1.6;
+}
+
+/* Disabled Link */
+.disabled-link {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.7;
 }
 

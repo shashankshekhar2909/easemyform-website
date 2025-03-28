@@ -100,7 +100,7 @@
           <div class="job-header">
             <h2>{{selectedJob?.designation}}</h2>
             <div class="company-details">
-              <a href="{{selectedJob.company_website}}" target="_blank" class="company-link">
+              <a [href]="selectedJob.company_website ? selectedJob.company_website : '#'" target="_blank" class="company-link" [ngClass]="{'disabled-link': !selectedJob.company_website}">
                 <h3>{{selectedJob.company}}</h3>
               </a>
               <span class="posted-on">Posted on: {{selectedJob?.created_at | date:'dd MMM yyyy'}}</span>
@@ -108,43 +108,107 @@
           </div>
 
           <div class="job-content">
+            <!-- Company Description -->
+            <div class="job-section" *ngIf="selectedJob?.company_description">
+              <h4>About the Company</h4>
+              <p>{{selectedJob?.company_description}}</p>
+            </div>
+
+            <!-- Job Description -->
             <div class="job-section">
               <h4>Job Description</h4>
               <p>{{selectedJob?.job_description_text}}</p>
             </div>
 
-            <div class="job-section" *ngIf="selectedJob?.requirements">
-              <h4>Requirements</h4>
-              <p>{{selectedJob?.requirements}}</p>
-            </div>
-
-            <div class="job-section" *ngIf="selectedJob?.responsibilities">
+            <!-- Responsibilities -->
+            <div class="job-section" *ngIf="selectedJob?.responsibilities && selectedJob.responsibilities.length > 0">
               <h4>Responsibilities</h4>
-              <p>{{selectedJob?.responsibilities}}</p>
+              <ul class="responsibilities-list">
+                <li *ngFor="let responsibility of selectedJob.responsibilities">{{responsibility}}</li>
+              </ul>
             </div>
 
+            <!-- Qualifications -->
+            <div class="job-section" *ngIf="selectedJob?.qualification && selectedJob.qualification.length > 0">
+              <h4>Qualifications</h4>
+              <ul class="qualification-list">
+                <li *ngFor="let qualification of selectedJob.qualification">{{qualification}}</li>
+              </ul>
+            </div>
+
+            <!-- Skills -->
+            <div class="job-section" *ngIf="selectedJob?.skills && selectedJob.skills.length > 0">
+              <h4>Skills</h4>
+              <div class="skills-container">
+                <span class="skill-tag" *ngFor="let skill of selectedJob.skills">{{skill}}</span>
+              </div>
+            </div>
+
+            <!-- Why Work Here -->
+            <div class="job-section" *ngIf="selectedJob?.why_work_here && selectedJob.why_work_here.length > 0">
+              <h4>Why Work Here</h4>
+              <ul class="why-work-here-list">
+                <li *ngFor="let reason of selectedJob.why_work_here">{{reason}}</li>
+              </ul>
+            </div>
+
+            <!-- Job Details -->
             <div class="job-section">
               <h4>Details</h4>
               <div class="job-details-grid">
-                <div class="detail-item">
+                <div class="detail-item" *ngIf="selectedJob?.location">
                   <span class="detail-label">Location:</span>
-                  <span class="detail-value">{{selectedJob?.location || 'Not specified'}}</span>
+                  <span class="detail-value">{{selectedJob?.location}}</span>
                 </div>
-                <div class="detail-item">
+                <div class="detail-item" *ngIf="selectedJob?.job_type">
                   <span class="detail-label">Job Type:</span>
-                  <span class="detail-value">{{selectedJob?.job_type || 'Not specified'}}</span>
+                  <span class="detail-value">{{selectedJob?.job_type}}</span>
                 </div>
-                <div class="detail-item">
+                <div class="detail-item" *ngIf="selectedJob?.experience">
                   <span class="detail-label">Experience:</span>
-                  <span class="detail-value">{{selectedJob?.experience || 'Not specified'}}</span>
+                  <span class="detail-value">{{selectedJob?.experience}}</span>
                 </div>
-                <div class="detail-item">
+                <div class="detail-item" *ngIf="selectedJob?.salary">
                   <span class="detail-label">Salary:</span>
-                  <span class="detail-value">{{selectedJob?.salary || 'Not specified'}}</span>
+                  <span class="detail-value">{{selectedJob?.salary}}</span>
+                </div>
+                <div class="detail-item" *ngIf="selectedJob?.work_mode">
+                  <span class="detail-label">Work Mode:</span>
+                  <span class="detail-value">{{selectedJob?.work_mode}}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- HR Contact Details -->
+            <div class="job-section contact-section" *ngIf="selectedJob?.contact_info">
+              <h4>HR Contact Details</h4>
+              <div class="contact-details">
+                <div class="contact-item" *ngIf="selectedJob.contact_info.email">
+                  <span class="contact-icon"><i class="bi bi-envelope"></i></span>
+                  <span class="contact-text">
+                    <a [href]="'mailto:' + selectedJob.contact_info.email">{{selectedJob.contact_info.email}}</a>
+                  </span>
+                </div>
+                <div class="contact-item" *ngIf="selectedJob.contact_info.phone">
+                  <span class="contact-icon"><i class="bi bi-telephone"></i></span>
+                  <span class="contact-text">
+                    <a [href]="'tel:' + selectedJob.contact_info.phone">{{selectedJob.contact_info.phone}}</a>
+                  </span>
+                </div>
+                <div class="contact-item" *ngIf="selectedJob.contact_info.linkedin">
+                  <span class="contact-icon"><i class="bi bi-linkedin"></i></span>
+                  <span class="contact-text">
+                    <a [href]="selectedJob.contact_info.linkedin" target="_blank">LinkedIn Profile</a>
+                  </span>
                 </div>
               </div>
             </div>
           </div>
+          <!-- <div class="job-apply-section">
+            <a [href]="'mailto:' + (selectedJob.contact_info?.email || '')" target="_blank" class="apply-btn">
+              Apply Now
+            </a>
+          </div> -->
         </div>
         <div class="no-job-selected" *ngIf="!selectedJob">
           <div class="placeholder-content">
